@@ -7,6 +7,7 @@ var logger = require("morgan");
 var indexRouter = require("./routes/index");
 let authorsRouter = require("./routes/authors");
 let booksRouter = require("./routes/books");
+let cors = require("cors");
 
 const mysql = require("mysql");
 
@@ -16,6 +17,7 @@ var app = express();
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "jade");
 
+app.use(cors());
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
