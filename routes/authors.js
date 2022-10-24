@@ -7,7 +7,7 @@ const {
   updateAuthor,
 } = require("../controllers/authors-controller");
 
-router.get("/authors", getAuthors);
+router.get("/", getAuthors);
 router.get("/author/:id", getAuthor);
 router.post("/author", createNewAuthor);
 router.put("/author/:id", updateAuthor);

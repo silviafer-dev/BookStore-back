@@ -21,7 +21,7 @@ exports.getAuthor = (req, res) => {
 exports.createNewAuthor = (req, res) => {
   let author = req.body;
   let newAuthor = [author.first_name, author.last_name];
-  let sql = "INSERT INTO bookings (first_name, last_name) VALUES (?)";
+  let sql = "INSERT INTO authors (first_name, last_name) VALUES (?)";
   db.query(
     sql,
     [newAuthor],

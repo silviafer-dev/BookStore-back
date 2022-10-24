@@ -7,7 +7,7 @@ const {
 
 var router = express.Router();
 
-router.get("/books", getBooks);
+router.get("/", getBooks);
 router.get("/book/:id", getBook);
 router.post("/book", createNewBook);
 
