@@ -3,7 +3,7 @@ const {
   getBooks,
   getBook,
   createNewBook,
-} = require("../controllers/books.controller");
+} = require("../controllers/books-controller");
 
 var router = express.Router();
 

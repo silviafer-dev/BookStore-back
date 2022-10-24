@@ -1,14 +1,14 @@
 const { db } = require("../db");
 
-exports.getAuthors = (req, res) => {
-  db.query("SELECT * FROM authors", (err, rows, field) => {
+exports.getAuthors = async(req, res) => {
+  await db.query("SELECT * FROM authors", (err, rows, field) => {
     if (!err) res.send(rows);
     else console.log(err);
   });
 };
 
-exports.getAuthor = (req, res) => {
-  db.query(
+exports.getAuthor = async(req, res) => {
+  await db.query(
     "SELECT * FROM authors WHERE id = ?",
     [req.params.id],
     (err, rows, field) => {
@@ -18,11 +18,11 @@ exports.getAuthor = (req, res) => {
   );
 };
 
-exports.createNewAuthor = (req, res) => {
+exports.createNewAuthor = async(req, res) => {
   let author = req.body;
   let newAuthor = [author.first_name, author.last_name];
   let sql = "INSERT INTO authors (first_name, last_name) VALUES (?)";
-  db.query(
+  await db.query(
     sql,
     [newAuthor],
 
@@ -34,12 +34,12 @@ exports.createNewAuthor = (req, res) => {
   );
 };
 
-exports.updateAuthor = (req, res) => {
+exports.updateAuthor = async(req, res) => {
   let author = req.body;
   let sql =
     "UPDATE authors SET first_name=?, last_name=? WHERE id =" +
     req.params.id;
-  db.query(
+  await db.query(
     sql,
     [author.first_name, author.last_name],
 
