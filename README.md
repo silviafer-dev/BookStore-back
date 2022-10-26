@@ -1,5 +1,17 @@
 # Book Store Project - Back
-### NodeJs Express
+### NodeJs Express with mySql database
+
+## How to start
+
+`git clone https://github.com/silviafer-dev/BookStore-back.git`
+
+## Install dependency 
+`npm install`
+
+Add your access user and password with a database name to env.js file to connect to the database and fill it with data
+
+## Run the app
+`npm start` open the browse in "http://localhost:4000"
 
 ## MODELS MYSQL DATABASE 'bookstore'
 
